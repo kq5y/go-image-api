@@ -53,8 +53,12 @@ func convertHandler(c *gin.Context) {
 	switch format {
 	case "avif":
 		options.Type = bimg.AVIF
+	case "heif":
+		options.Type = bimg.HEIF
 	case "webp":
 		options.Type = bimg.WEBP
+	case "png":
+		options.Type = bimg.PNG
 	case "jpeg":
 		options.Type = bimg.JPEG
 	default:
