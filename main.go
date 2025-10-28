@@ -70,6 +70,7 @@ func convertHandler(c *gin.Context) {
 
 	img, err := bimg.NewImage(buf).Process(options)
 	if err != nil {
+		fmt.Println("Error processing image:", err)
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "processing failed"})
 		return
 	}
